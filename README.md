@@ -14,6 +14,8 @@
 
 *And God remained silent.*
 
+## Overview
+
 SchizOS is an experimental operating system project aiming to combine technologies that were never designed, intended, or reasonably expected to work together.
 
 The ultimate goal is to build a system featuring:
@@ -22,6 +24,7 @@ The ultimate goal is to build a system featuring:
 - **FreeBSD** userland compatibility.
 - **Gentoo Portage**, reimplemented in x86-64 assembly using FASM.
 - **No GNU userland** in the target system.
+- **Namaz in Ring 0**, because apparently even prayers require kernel privileges.
 - **fvwm** running at 640×480.
 - **neofetch**, so future generations may witness what we have done.
 
@@ -30,6 +33,30 @@ This is not a Linux distribution.
 This is not a practical alternative to any existing operating system.
 
 **This is what happens when free will goes unchecked.**
+
+## The Origin
+
+Every great operating system begins with a vision.
+
+Ours began with a meme.
+
+![The original meme that started SchizOS](docs/assets/original-meme.jpg)
+
+**Original meme:** Shared by [@neimxd](https://www.tiktok.com/@neimxd) on TikTok.
+
+### English Translation
+
+> The ultimate build: a TempleOS kernel, Gentoo with Portage written in FASM, FreeBSD userland without a single line of GNU code, namaz in Ring 0, and all of it rendered through fvwm at 640×480.
+>
+> If you run neofetch on this thing, the computer should simply annihilate the reality around it with a quiet pop.
+
+### What Happened Next?
+
+Someone saw this meme and decided to actually implement it.
+
+We sincerely apologize for this misunderstanding.
+
+**The original author made a joke. We made a repository.**
 
 ## Project Status
 
@@ -131,6 +158,10 @@ Because apparently one operating system was not enough to test God's patience.
 ### Why rewrite Portage in assembly?
 
 Because Python apparently made package management too accessible.
+
+### Why namaz in Ring 0?
+
+Because Ring 3 prayers apparently lack sufficient privileges.
 
 ### Is this production-ready?
 
