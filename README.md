@@ -34,6 +34,115 @@ This is not a practical alternative to any existing operating system.
 
 **This is what happens when free will goes unchecked.**
 
+## Building & Running
+
+SchizOS is currently in its early development stage. For now, the development environment boots the original TempleOS ISO in QEMU without any kernel modifications.
+
+**Requirements:**
+
+- Linux development host
+- QEMU with x86-64 system emulation
+- Original TempleOS ISO
+- Faith (optional)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/nvpebb/SchizOS.git
+cd SchizOS
+```
+
+### 2. Obtain TempleOS
+
+Download the original TempleOS ISO from [the official TempleOS website](https://templeos.org/).
+
+Place it at:
+
+```text
+images/TempleOS.ISO
+```
+
+The ISO is not tracked by Git.
+
+**Expected SHA-256:**
+
+```text
+5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26
+```
+
+Verify the downloaded image:
+
+```bash
+echo "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26  images/TempleOS.ISO" | sha256sum --check
+```
+
+Expected output:
+
+```text
+images/TempleOS.ISO: OK
+```
+
+**If the checksum does not match, do not proceed. God does not accept corrupted offerings.**
+
+### 3. Install QEMU
+
+On Arch Linux:
+
+```bash
+sudo pacman -S --needed qemu-desktop
+```
+
+Other Linux distributions may use different package names.
+
+### 4. Boot TempleOS
+
+```bash
+chmod +x scripts/run-qemu.sh
+./scripts/run-qemu.sh
+```
+
+The script starts QEMU with the following configuration:
+
+| Parameter | Value |
+|---|---|
+| Architecture | x86-64 |
+| Machine | Standard PC |
+| Acceleration | TCG |
+| Memory | 512 MiB |
+| Virtual CPUs | 1 |
+| Boot medium | IDE CD-ROM |
+| Graphics | Standard VGA |
+| Display | GTK |
+| Persistent storage | None |
+
+The original TempleOS environment should boot from the ISO.
+
+**Note:** No persistent virtual disk is attached. Changes made inside the live environment may be lost after shutdown.
+
+### 5. Troubleshooting
+
+**QEMU cannot find the ISO**
+
+Verify that `images/TempleOS.ISO` exists and that the launch script resolves the path correctly.
+
+**QEMU fails to open the GTK display**
+
+Run the script from a graphical desktop session with GTK display support.
+
+**The kernel does not boot**
+
+Check the ISO checksum, QEMU version, and launch configuration.
+
+If the problem persists, open an issue and provide the relevant logs.
+
+**Prayers without reproducible error reports will be closed as `cannot reproduce`.**
+
+### Development Status
+
+This procedure boots unmodified TempleOS. It does not yet build or boot a custom SchizOS kernel.
+
+**We have successfully summoned the kernel. We have not yet committed heresy against it.**
+
 ## The Origin
 
 Every great operating system begins with a vision.
