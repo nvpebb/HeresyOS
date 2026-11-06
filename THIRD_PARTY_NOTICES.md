@@ -1,135 +1,124 @@
 # Third-Party Software Notices
 
-SchizOS is an experimental operating system project based on TempleOS, with planned compatibility and integration work involving FreeBSD, Gentoo Portage, FASM, and other software.
+HeresyOS is an independent experimental operating system project based on TempleOS, with planned compatibility and integration work involving FreeBSD, Gentoo-inspired package management, FASM, and other software.
 
-This document records third-party projects relevant to SchizOS and their licensing considerations.
+**Important:** Listing a project here does **not** imply that its source code or binaries are currently included in this repository. The status of each component must be updated when it is actually imported or distributed.
 
-**Important:** Listing a project here does not imply that its source code or binaries are currently included in this repository.
-
-Third-party components retain their applicable copyright notices and licensing requirements.
+Third-party components retain their applicable copyright notices, license conditions, and attribution requirements. The repository's GPL-3.0 license for original HeresyOS code does not automatically replace those terms.
 
 ## 1. TempleOS
 
 - **Project:** TempleOS
-- **Original Author:** Terry A. Davis
-- **Website:** https://templeos.org/
-- **License:** Public Domain
-- **Status:** Planned kernel foundation
+- **Original author:** Terry A. Davis (1969–2018)
+- **Archive:** https://templeos.org/
+- **Licensing:** Original TempleOS was released into the public domain by its author. Review the provenance and any third-party material of the specific snapshot imported.
+- **Current status:** Original ISO used as a development and test environment; a pinned source snapshot has not yet been documented as incorporated into HeresyOS.
 
-TempleOS is the intended foundation of SchizOS.
+TempleOS is the intended kernel foundation. HeresyOS aims to modify and extend it rather than replace it with Linux or another kernel.
 
-The project aims to modify and extend the original TempleOS kernel rather than replace it with Linux or another operating system kernel.
+HeresyOS is **not** an official continuation or successor to TempleOS and is not affiliated with or endorsed by its original author, estate, or archive maintainers.
 
-The original TempleOS project was released into the public domain by its author.
+When a source snapshot is imported, record at minimum:
 
-SchizOS is an independent experimental project and is not an official continuation of TempleOS.
+- Archive or repository URL.
+- Release/version and immutable commit or artifact identifier, if available.
+- Archive checksum or other provenance evidence.
+- Included files and any third-party notices requiring separate treatment.
+- A description of changes made by HeresyOS.
+
+The original TempleOS credits themselves mention certain third-party-derived material. Do not assume every file can be treated identically merely because the overall system was described as public domain.
 
 ## 2. FreeBSD
 
 - **Project:** FreeBSD
 - **Website:** https://www.freebsd.org/
-- **License:** Primarily BSD licenses, with component-specific exceptions
-- **Status:** Planned userspace compatibility
+- **License:** Primarily BSD-family licenses, with file- and component-specific exceptions.
+- **Status:** Planned userspace compatibility; no FreeBSD source incorporation is asserted here.
 
-SchizOS aims to implement compatibility with selected FreeBSD userspace components.
+HeresyOS intends to implement a **selected subset** of FreeBSD userspace behavior and ABI conventions. Compatibility does not itself imply inclusion of FreeBSD code.
 
-Individual FreeBSD source files and dependencies must be reviewed before inclusion.
-
-Required copyright notices, license texts, and attribution must be preserved.
-
-Compatibility with FreeBSD does not imply that FreeBSD source code has been incorporated.
+If FreeBSD files or binaries are incorporated, review each component's license, dependencies, and required copyright notices before distribution.
 
 ## 3. Gentoo Portage
 
 - **Project:** Gentoo Portage
 - **Website:** https://www.gentoo.org/
 - **Source:** https://github.com/gentoo/portage
-- **License:** GNU GPL v2, subject to verification of individual components and files
-- **Status:** Planned assembly-language reimplementation
+- **License:** Generally GPL-2.0; verify the applicable version and terms for any files actually used.
+- **Status:** Planned independently written, Portage-inspired package manager in x86-64 assembly.
 
-SchizOS intends to develop an experimental package management subsystem inspired by Gentoo Portage, implemented using FASM.
+HeresyOS does not currently claim to implement or distribute Portage.
 
-The initial implementation is intended to be independently written.
+An independently written package manager inspired by Portage's concepts is not automatically a derivative of Portage's source code. If existing Portage source is copied, translated, or adapted, the resulting licensing obligations must be evaluated before incorporation.
 
-If existing Portage source code is copied, translated, or adapted, the applicable license obligations must be reviewed and followed.
-
-The planned implementation is not affiliated with or endorsed by the Gentoo project.
+The project is not affiliated with or endorsed by Gentoo.
 
 ## 4. Flat Assembler (FASM)
 
 - **Project:** Flat Assembler
 - **Website:** https://flatassembler.net/
 - **Author:** Tomasz Grysztar
-- **License:** Refer to the applicable official distribution terms
-- **Status:** Planned development tool
+- **License:** Refer to the terms accompanying the exact FASM distribution or component used.
+- **Status:** Planned assembly-language development tool.
 
-FASM is intended to be used for developing the assembly-language package management subsystem and potentially other low-level components.
-
-Using FASM as a development tool does not, by itself, imply that FASM source code or binaries are redistributed with SchizOS.
-
-If FASM components are included in distributed artifacts, their applicable licensing terms must be reviewed.
+Using FASM as a build tool does not by itself mean its source or binaries are redistributed with HeresyOS. If they are bundled, their applicable terms must be reviewed.
 
 ## 5. fvwm
 
 - **Project:** fvwm
 - **Website:** https://www.fvwm.org/
-- **License:** GNU GPL v2 or later, subject to component-specific verification
-- **Status:** Planned graphical environment
+- **License:** GPL-family licensing; verify the exact version and component-specific terms for the release selected.
+- **Status:** Planned graphical environment, not yet integrated.
 
-SchizOS aims to support fvwm at a resolution of 640×480.
-
-This will require substantial graphical infrastructure and compatibility work.
-
-Any incorporated fvwm code must retain its applicable copyright notices and license terms.
+Running fvwm requires a substantial userspace and graphical compatibility effort. Any incorporated code must retain the notices and license obligations applicable to the selected version.
 
 ## 6. neofetch
 
 - **Project:** neofetch
-- **Original Author:** Dylan Araps
+- **Original author:** Dylan Araps
 - **Source:** https://github.com/dylanaraps/neofetch
 - **License:** MIT
-- **Status:** Planned system information utility
+- **Status:** Planned system information utility, not yet integrated.
 
-SchizOS aims to support neofetch as a demonstration of the completed system.
-
-If neofetch source code is incorporated or redistributed, its applicable license and copyright notices must be preserved.
+If neofetch is incorporated or redistributed, preserve its applicable license and copyright notices.
 
 The project acknowledges that running neofetch may have consequences beyond the scope of conventional software testing.
 
 ## 7. Original Meme
 
-The image included at `docs/assets/original-meme.jpg` is a third-party meme that inspired the SchizOS project.
+- **File:** `docs/assets/original-meme.jpg`
+- **Shared source:** https://www.tiktok.com/@neimxd
+- **Status:** Included as an illustration of the project's inspiration, subject to rights review.
 
-Its publication source is credited in the project README.
+The identity of the original image creator and its copyright status have not been independently verified. Attribution to an account that shared the meme does not itself grant redistribution rights.
 
-The identity of the original creator and the image's copyright status have not been independently verified.
-
-The image is not covered by the license applicable to original SchizOS source code.
-
-Attribution does not itself grant permission to redistribute copyrighted material. The image may need to be removed or replaced if the necessary rights cannot be established.
+The image is **not** covered by the GPL-3.0 license for original HeresyOS code. Remove or replace it if the necessary rights cannot be established.
 
 ## 8. Licensing Policy
 
-Original SchizOS source code is distributed under the license specified in the repository's `LICENSE` file.
+Original HeresyOS source code is licensed as specified in the repository's `LICENSE` file (currently GNU GPL version 3).
 
-Third-party software is not automatically relicensed under the SchizOS project license.
+That license statement applies to material the HeresyOS contributors are entitled to license under those terms. It does **not** claim exclusive ownership of public-domain TempleOS code or relicense independently copyrighted third-party components merely by listing them here.
 
-Before incorporating third-party code, contributors must:
+Before incorporating or distributing third-party material:
 
-1. Identify the applicable license.
-2. Verify compatibility with the intended distribution.
-3. Preserve required copyright and attribution notices.
-4. Include required license texts when redistributing code.
-5. Document modifications where required.
-6. Update this file to reflect the components actually included.
+1. Identify its source and the exact version or revision.
+2. Verify the applicable license and any file-specific exceptions.
+3. Assess license compatibility for the way the material will be combined and distributed.
+4. Preserve required copyright, attribution, and modification notices.
+5. Include required license texts and corresponding source where applicable.
+6. Document any modifications and the provenance of imported files.
+7. Update this document to distinguish **planned**, **included**, and **distributed** components.
 
-Where appropriate, individual source files should contain SPDX license identifiers.
+Where appropriate, original source files should carry accurate SPDX license identifiers. Do not add `GPL-3.0-only` to original public-domain TempleOS files merely because they reside in the same repository.
+
+**No GNU userland** is a technical design constraint for the eventual target system, not a prohibition on GPL-licensed project code or GNU tools used on a development host.
 
 ## 9. Disclaimer
 
-SchizOS is an independent experimental project.
+HeresyOS is an independent experimental project.
 
-References to TempleOS, FreeBSD, Gentoo, FASM, fvwm, and neofetch do not imply affiliation, sponsorship, or endorsement by their respective authors or organizations.
+References to TempleOS, FreeBSD, Gentoo, FASM, fvwm, and neofetch do not imply affiliation, sponsorship, or endorsement by their respective authors, estates, maintainers, or organizations.
 
 ---
 
