@@ -10,7 +10,8 @@ qemu-system-x86_64 \
   -accel tcg \
   -m 512M \
   -smp 1 \
-  -drive "file=${PROJECT_ROOT}/images/TempleOS.ISO,media=cdrom,if=ide,readonly=on" \
-  -boot d \
+  -drive "file=${PROJECT_ROOT}/images/TempleOS.ISO,format=raw,media=cdrom,if=ide,readonly=on" \
+  -drive "file=${PROJECT_ROOT}/images/templeos-dev.qcow2,format=qcow2,media=disk,if=ide" \
+  -boot order=d \
   -vga std \
   -display gtk
